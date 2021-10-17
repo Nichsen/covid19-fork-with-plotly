@@ -2,7 +2,7 @@
 # @Author: Nichsen   https://github.com/Nichsen 
 # @Date:   2021-10-07 18:24:22
 # @Last Modified by:   Nichsen   https://github.com/Nichsen 
-# @Last Modified time: 2021-10-17 18:03:20
+# @Last Modified time: 2021-10-17 18:08:19
 import json
 import os
 from datetime import datetime
@@ -37,13 +37,8 @@ def genPlotly(): # "dump tool" generationg html form json data creating a simple
 
     fig = go.Figure()
     fig.add_trace(go.Scatter(x=x, y=y1, name="Active", line_shape='linear'))
-    """fig.add_trace(go.Scatter(x=x, y=y2, name="Confirmed",
-                        text=["tweak line smoothness<br>with 'smoothing' in line object"],
-                        hoverinfo='text+name',
-                        line_shape='linear'))"""
     fig.add_trace(go.Scatter(x=x, y=y2, name="Confirmed", line_shape='linear'))
     fig.add_trace(go.Scatter(x=x, y=y3 , name="Deaths", line_shape='linear'))
-
     fig.update_traces(hoverinfo='text+name', mode='lines+markers')
     fig.update_layout(legend=dict(y=0.5, traceorder='reversed', font_size=16))
     fig.show()
